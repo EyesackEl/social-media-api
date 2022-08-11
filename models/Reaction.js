@@ -9,7 +9,7 @@ const reactionSchema = new Schema(
     },
     reactionBody: {
         type: String,
-        max: [280, "Reactions must be less than 281 characters"],
+        max: [280, "Reactions cannot be more than 280 characters"],
         required: true,
     },
     username: {

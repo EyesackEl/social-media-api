@@ -10,16 +10,16 @@ const thoughtSchema = new Schema(
         min: [1, 'Text cannot be empty'],
         max: [280, 'Only 280 characters allowed'],
         required: true
-        },
+      },
       createdAt:{
         type: Date,
         default: Date.now,
         get: formatDate,
-        },
+      },
       username:{
         type: String,
-      required: true
-        },
+        required: true
+      },
       reactions: [reactionSchema]
     },
     {
@@ -36,4 +36,4 @@ thoughtSchema.virtual('reactionCount').get(function () {
 
 const Thought = model('post', thoughtSchema);
 
-module.exports = Thought; 
+module.exports = Thought;

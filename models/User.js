@@ -1,3 +1,4 @@
+const Thought = require('./Thought')
 const { Schema, model } = require('mongoose');
 const { isEmail } = require('validator');
 
@@ -13,13 +14,12 @@ const userSchema = new Schema(
         type: String,
         unique: true,
         validate: [isEmail, 'Please use a valid email address'],
-        // match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Please use a valid email address']
         required: true
       },
       thoughts: [
         {
           type: Schema.Types.ObjectId,
-          ref: 'thought'
+          ref: Thought
         }
       ],
       friends: [
@@ -31,6 +31,7 @@ const userSchema = new Schema(
     },
     {
       toJSON: {
+        getters: true,
         virtuals: true,
       },
       id: false,
