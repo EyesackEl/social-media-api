@@ -2,7 +2,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo](#Demo)
+- [Demo](#demo)
 - [License](#license)
 
 Reach the author of this README at [isaac.laflamme@gmail.com](mailto:isaac.laflamme@gmail.com)
